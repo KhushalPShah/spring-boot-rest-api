@@ -1,0 +1,24 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:h2:mem:mydb
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+---
+
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:mysql://localhost:3301/rest_with_spring
+    username: root
+    password: MySQL123#
+  jpa:
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQLInnoDBDialect
