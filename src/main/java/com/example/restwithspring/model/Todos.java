@@ -1,24 +1,27 @@
 package com.example.restwithspring.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.Hibernate;
+
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.UUID;
 
 @Entity
 public class Todos {
 
     @Id
-    private int id;
+    @GeneratedValue
+    private long id;
 
     private String title;
 
     private String description;
-
-
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
